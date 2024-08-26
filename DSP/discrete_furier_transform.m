@@ -2,8 +2,8 @@ clc;
 clear all; 
 close all;
 
-n = 0:1:7;
-x = 6*(cos(pi*n/4))*2; % Sequence
+n = 0:1:3;
+x = [2,3,-1,1]; % Sequence
 
 y = fft(x); % Compute DFT
 magnitude = abs(y);
@@ -16,11 +16,11 @@ stem(f, magnitude);
 xlabel('Frequency (f)');
 ylabel('Magnitude');
 title('Magnitude');
-axis ([-2 10 -20 60]);
+axis ([-0.5 3.5 -10 10]);
 
 subplot(2,1,2);
 stem(f, phase);
 xlabel('Frequency (f)');
 ylabel('Phase');
 title('Angle (degree)');
-axis([-2 10 -200 200]);
+axis([-0.5 3.5 -200 200]);
